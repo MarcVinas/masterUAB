@@ -7,6 +7,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="videogame.cpp" />
+    <ClCompile Include="videogamex.cpp" />
   </ItemGroup>
 </Project>
