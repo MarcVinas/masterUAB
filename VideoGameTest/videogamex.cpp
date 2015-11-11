@@ -1,5 +1,7 @@
 #include <Windows.h>
 #include <d3d11.h>
+#include "Application.h"
+#include "DebugRender.h"
 
 #include "ContextManager.h"
 //#include <d3dx11.h>
@@ -75,14 +77,21 @@ int APIENTRY WinMain(HINSTANCE _hInstance, HINSTANCE _hPrevInstance, LPSTR _lpCm
 	// Crear la ventana en si
 	HWND hWnd = CreateWindow( APPLICATION_NAME, APPLICATION_NAME, WS_OVERLAPPEDWINDOW, 100, 100, rc.right - rc.left, rc.bottom - rc.top, NULL, NULL, wc.hInstance, NULL);
 
-	CContextManager *contextManager=new CContextManager();
-	contextManager->Init(WIDTH_APPLICATION, HEIGHT_APPLICATION, hWnd);
+
 	
 
   // Añadir aquí el Init de la applicacioón
-
-  ShowWindow( hWnd, SW_SHOWDEFAULT );
-  contextManager->initRenderTarget();
+	CContextManager context;
+	context.CreateContext(hWnd,WIDTH_APPLICATION, HEIGHT_APPLICATION );
+	context.CreateBackBuffer(hWnd,WIDTH_APPLICATION, HEIGHT_APPLICATION );
+	
+	ShowWindow( hWnd, SW_SHOWDEFAULT );
+	
+	context.InitStates();
+	CDebugRender debugRender(context.GetDevice());
+	CApplication application(&debugRender,&context);
+  
+ // contextManager->initRenderTarget();
   UpdateWindow( hWnd );
   MSG msg;
   ZeroMemory( &msg, sizeof(msg) );
@@ -99,7 +108,8 @@ int APIENTRY WinMain(HINSTANCE _hInstance, HINSTANCE _hPrevInstance, LPSTR _lpCm
     else
     {
        // Main loop: Añadir aquí el Update y Render de la aplicación principal
-		//Update();
+		application.Update(1/10.f);
+		application.Render();
 		//Render();
 
     }
