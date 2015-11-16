@@ -7,8 +7,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="videogamex.cpp" />
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="videogamex.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />

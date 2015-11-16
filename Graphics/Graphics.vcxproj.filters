@@ -1,22 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="dummy.cpp" />
-    <ClCompile Include="CameraController.cpp" />
-    <ClCompile Include="ContextManager.cpp" />
-    <ClCompile Include="DebugRender.cpp" />
-    <ClCompile Include="Frustum.cpp" />
-    <ClCompile Include="SphericalCameraController.cpp" />
+    <ClInclude Include="VertexTypes.h" />
+    <ClInclude Include="SphericalCameraController.h" />
+    <ClInclude Include="RenderableVertexs.h" />
+    <ClInclude Include="Frustum.h" />
+    <ClInclude Include="FPSCameraController.h" />
+    <ClInclude Include="Effect.h" />
+    <ClInclude Include="DebugRender.h" />
+    <ClInclude Include="ContextManager.h" />
+    <ClInclude Include="CameraController.h" />
+    <ClInclude Include="Camera.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="CameraController.h" />
-    <ClInclude Include="ContextManager.h" />
-    <ClInclude Include="DebugRender.h" />
-    <ClInclude Include="Effect.h" />
-    <ClInclude Include="Frustum.h" />
-    <ClInclude Include="RenderableVertexs.h" />
-    <ClInclude Include="SphericalCameraController.h" />
-    <ClInclude Include="VertexTypes.h" />
+    <ClCompile Include="SphericalCameraController.cpp" />
+    <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="FPSCameraController.cpp" />
+    <ClCompile Include="dummy.cpp" />
+    <ClCompile Include="DebugRender.cpp" />
+    <ClCompile Include="ContextManager.cpp" />
+    <ClCompile Include="CameraController.cpp" />
   </ItemGroup>
 </Project>
