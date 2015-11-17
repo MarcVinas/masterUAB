@@ -5,7 +5,7 @@
 CDebugHelperImplementation::CDebugHelperImplementation(void *device)
 {
 	// TODO: inicializar AntTweakBar
-	/*
+	
 	int status = TwInit(TW_DIRECT3D11, device);
 	assert(status);
 
@@ -22,17 +22,17 @@ CDebugHelperImplementation::CDebugHelperImplementation(void *device)
 
 		m_PosRotType = TwDefineStruct("POSITION_ORIENTATION", structMembers, 6, sizeof(SPositionOrientation), nullptr, nullptr);
 	}
-	*/
+	
 }
 
 
 CDebugHelperImplementation::~CDebugHelperImplementation()
 {
 	// TODO: finalizar AntTweakBar
-	/*
+	
 	int status = TwTerminate();
 	assert(status);
-	*/
+
 }
 
 void CDebugHelperImplementation::Log(const std::string& text) const
@@ -44,14 +44,14 @@ void CDebugHelperImplementation::Log(const std::string& text) const
 void CDebugHelperImplementation::Render()
 {
 	// TODO: pintar el AntTweakBar
-	/*
+	
 	int status = TwDraw();
 	if (!status)
 	{
 		const char* error = TwGetLastError();
 		Log(error);
 	}
-	*/
+	
 }
 
 bool CDebugHelperImplementation::Update(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
@@ -64,7 +64,7 @@ bool CDebugHelperImplementation::Update(HWND hWnd, UINT msg, WPARAM wParam, LPAR
 void CDebugHelperImplementation::RegisterBar(const SDebugBar& bar)
 {
 	// TODO: registrar una ventana de debug
-	/*
+	
 	int status = 0;
 	std::unordered_map<std::string, TwBar*>::iterator it = m_Bars.find(bar.name);
 	if (it != m_Bars.end())
@@ -135,7 +135,7 @@ void CDebugHelperImplementation::RegisterBar(const SDebugBar& bar)
 	}
 
 	m_Bars[bar.name] = twBar;
-	*/
+	
 }
 
 void CDebugHelperImplementation::RemoveBar(const std::string& bar)

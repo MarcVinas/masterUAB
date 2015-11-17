@@ -5,7 +5,7 @@
 #include <unordered_map>
 
 // TODO: Activar AntTeakBar
-// #include <AntTweakBar.h>
+#include <AntTweakBar.h>
 
 #include "DebugHelper.h"
 
@@ -25,7 +25,7 @@ public:
 	virtual void RemoveBar(const std::string& bar);
 
 	// TODO: descomentar esto
-	// std::unordered_map<std::string, TwBar*> m_Bars;
-	// TwType m_PosRotType;
+	std::unordered_map<std::string, TwBar*> m_Bars;
+	TwType m_PosRotType;
 };
 
