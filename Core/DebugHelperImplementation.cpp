@@ -56,9 +56,8 @@ void CDebugHelperImplementation::Render()
 
 bool CDebugHelperImplementation::Update(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {
-	return false;
 	// TODO: mandarle eventos al AntTweakBar
-	// return TwEventWin(hWnd, msg, wParam, lParam);
+	return TwEventWin(hWnd, msg, wParam, lParam);
 }
 
 void CDebugHelperImplementation::RegisterBar(const SDebugBar& bar)

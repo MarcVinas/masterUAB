@@ -15,6 +15,9 @@
     <ClCompile Include="videogamex.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\3rdParty\AntTweakBar\AntTweakBar.vcxproj">
+      <Project>{b99e1fa1-c30a-45f2-9d57-9e9c21b2df42}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Base\Base.vcxproj">
       <Project>{69430b34-6c84-44a0-896c-24e980d9b718}</Project>
     </ProjectReference>
@@ -73,7 +76,7 @@
     <OutDir>$(SolutionDir)\bin\$(ProjectName)\</OutDir>
     <IntDir>$(SolutionDir)\bin\Intermediate\$(ProjectName)$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
-    <LibraryPath>$(SolutionDir)bin\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)bin\lib;$(DXSDK_DIR)\lib\x86;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -87,13 +90,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)Base;$(SolutionDir)Graphics;$(SolutionDir)Core;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Base;$(SolutionDir)Graphics;$(SolutionDir)Core;$(SolutionDir)\3rdParty\AntTweakBar\include;$(SolutionDir)\3rdParty\AntTweakBar\debug32</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName)_d.pdb</ProgramDatabaseFile>
       <AdditionalDependencies>Winmm.lib;Graphics_d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DXSDK_DIR)\Lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
