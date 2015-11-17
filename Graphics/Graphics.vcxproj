@@ -18,7 +18,11 @@
     <ClInclude Include="Effect.h" />
     <ClInclude Include="FPSCameraController.h" />
     <ClInclude Include="Frustum.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="MaterialManager.h" />
+    <ClInclude Include="RenderableObject.h" />
     <ClInclude Include="RenderableVertexs.h" />
+    <ClInclude Include="RenderManager.h" />
     <ClInclude Include="SphericalCameraController.h" />
     <ClInclude Include="VertexTypes.h" />
   </ItemGroup>
@@ -29,7 +33,13 @@
     <ClCompile Include="dummy.cpp" />
     <ClCompile Include="FPSCameraController.cpp" />
     <ClCompile Include="Frustum.cpp" />
+    <ClCompile Include="MaterialManager.cpp" />
+    <ClCompile Include="RenderableObject.cpp" />
+    <ClCompile Include="RenderManager.cpp" />
     <ClCompile Include="SphericalCameraController.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="materials.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{31F7443F-B43C-4D38-931C-FAC7C771EF91}</ProjectGuid>

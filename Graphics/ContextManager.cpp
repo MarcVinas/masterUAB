@@ -414,7 +414,8 @@ void CContextManager::Resize(HWND hWnd, unsigned int Width, unsigned int Height)
 	}
 }
 
-void CContextManager::Draw(CRenderableVertexs* _VerticesToRender, ERasterizedState _RS, EDepthStencilStates _DSS, EBlendStates _BS)
+//void CContextManager::Draw(CRenderableVertexs* _VerticesToRender, ERasterizedState _RS, EDepthStencilStates _DSS, EBlendStates _BS)
+void CContextManager::Draw(const CRenderableVertexs* _VerticesToRender, ERasterizerState _RS = RS_SOLID, EDepthStencilState _DSS = DSS_DEPTH_ON, EBlendState _BS = BLEND_SOLID)
 {
 	m_DeviceContext->RSSetState(m_RasterizerSates[_RS]);
 	m_DeviceContext->OMSetDepthStencilState(m_DepthStencilStates[_DSS], 0);
